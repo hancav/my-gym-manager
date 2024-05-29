@@ -31,7 +31,7 @@ Provide step-by-step instructions on how to install and set up your Mega Site. I
 9. Go to: http://localhost/register and register admin@mail.com:12345678
 10. Login as admin
 11. go to http://localhost:8080/ and login as: sail:password to check db
-12. Done ... enjoy Mega Site
+12. Done ... enjoy Mega Site.
 
 ## Usage
 Explain how to use your Mega Site. Provide examples, code snippets, or screenshots to demonstrate its functionality.
