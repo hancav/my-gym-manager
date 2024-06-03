@@ -26,8 +26,9 @@
                             </div>
                         </div>
                         <div class="mt-1 text-right">
-                            <form method="post" action="{{ route('schedule.store') }}">
+                            <form method="post" action="{{ route('booking.store') }}">
                                 @csrf
+                                <input type="hidden" name="scheduled_class_id" value="{{ $class->id }}">
                                 <x-primary-button class="px-3 py-1">Book</x-primary-button>
                             </form>
                         </div>
