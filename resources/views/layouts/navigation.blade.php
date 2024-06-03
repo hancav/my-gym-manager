@@ -15,6 +15,20 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @can('schedule-class')
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('schedule.create')" :active="request()->routeIs('schedule.create')">
+                            Schedule a class
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('schedule.index')" :active="request()->routeIs('schedule.index')">
+                            Upcoming classes
+                        </x-nav-link>
+                    </div>
+                    @endcan
+
                 </div>
             </div>
 
