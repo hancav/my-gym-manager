@@ -13,9 +13,10 @@
         "laravel/helpers": "^1.7",
         "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^3.2",
+        "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
-        "predis/predis": "^2.2", 
+        "predis/predis": "^2.2",
         "spatie/laravel-ignition": "^2.0"
     },
     "require-dev": {
