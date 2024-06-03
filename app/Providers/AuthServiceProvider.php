@@ -27,5 +27,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('viewPulse', function (User $user) {
             return $user->isAdmin();
         });
+
+        Gate::define('schedule-class', function (User $user) {
+            return $user->role === 'instructor';
+        });
     }
 }
