@@ -12,13 +12,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('app:remind-members')->dailyAt('14:28');
     }
 
     /**
      * Register the commands for the application.
      */
-    protected function commands(): void
+    protected function commands(): void 
     {
         $this->load(__DIR__.'/Commands');
 
