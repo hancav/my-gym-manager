@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Log;
 // mail
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ClassCanceledMail;
-// notifications
-use App\Notifications\ClassCanceledNotification;
-use Illuminate\Support\Facades\Notification;
+// use job
+use App\Jobs\NotifyClassCanceledJob;
 
 class NotifyClassCanceled
 {
@@ -36,7 +35,6 @@ class NotifyClassCanceled
 
         $details = compact('className', 'classDateTime');
 
-        Notification::send($members, new ClassCanceledNotification($details));
-
+        NotifyClassCanceledJob::dispatch($members, $details);
     }
 }
