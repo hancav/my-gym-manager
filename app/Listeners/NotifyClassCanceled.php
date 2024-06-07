@@ -34,6 +34,8 @@ class NotifyClassCanceled
         $classDateTime = $event->scheduledClass->date_time;
 
         $details = compact('className', 'classDateTime');
+        
+        //Notification::send($members, new ClassCanceledNotification($details));
 
         NotifyClassCanceledJob::dispatch($members, $details);
     }
