@@ -1,6 +1,6 @@
-# Mega Site
+# MyGym Manager
 
-Welcome to MyGym Manager Demo! 
+Welcome to MyGym Manager App! 
 
 ## Table of Contents
 - [Introduction](#introduction)
