@@ -1,6 +1,6 @@
 services:
     laravel.test:
-        container_name: mega-site
+        container_name: my-gym-manager
         build:
             context: ./vendor/laravel/sail/runtimes/8.3
             dockerfile: Dockerfile
