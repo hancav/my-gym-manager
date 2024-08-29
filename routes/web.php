@@ -72,7 +72,16 @@ Route::middleware('auth')->group(function () {
 Route::get('/predict', [InferenceController::class, 'predict'])->middleware(['auth'])->name('predict'); 
 
 Route::get('/test-db', function () {
-    return \DB::select('SELECT sqlite_version()');
+    $driver = config('database.default');
+    if ($driver === 'sqlite') {
+        $version = DB::select('SELECT sqlite_version() AS version');
+        return response()->json(['database' => 'SQLite', 'version' => $version[0]->version]);
+    } elseif ($driver === 'mysql') {
+        $version = DB::select('SELECT VERSION() AS version');
+        return response()->json(['database' => 'MySQL', 'version' => $version[0]->version]);
+    } else {
+        return response()->json(['error' => 'Unsupported database type']);
+    }
 });
 
 require __DIR__.'/auth.php';
