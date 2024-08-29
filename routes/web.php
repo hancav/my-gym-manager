@@ -69,8 +69,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/predict', [InferenceController::class, 'predict'])->middleware(['auth'])->name('predict'); 
-
 Route::get('/test-db', function () {
     $driver = config('database.default');
     if ($driver === 'sqlite') {
