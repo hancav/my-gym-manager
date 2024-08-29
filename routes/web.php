@@ -10,6 +10,8 @@ use App\Http\Controllers\Inference\InferenceController;
 #
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ScheduledClassController;
+#
+use Illuminate\Support\Facades\DB; 
 
 /*
 |--------------------------------------------------------------------------
@@ -68,5 +70,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/predict', [InferenceController::class, 'predict'])->middleware(['auth'])->name('predict'); 
+
+Route::get('/test-db', function () {
+    return \DB::select('SELECT sqlite_version()');
+});
 
 require __DIR__.'/auth.php';
